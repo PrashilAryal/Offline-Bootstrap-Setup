@@ -51,7 +51,7 @@
     }
     </style>
 </head>
-</head>
+
 
 <body>
     <nav class="navbar navbar-expand-lg bg-light">
@@ -63,6 +63,10 @@
             </button>
             <!-- <div class="collapse navbar-collapse" id="navbarNav"> -->
             <div class="d-flex justify-content-end" id="navbarNav">
+                @auth
+                <h3>{{auth()->user()->name}}</h3>
+                @endauth
+                @guest
                 <ul class="navbar-nav">
                     <!-- <li class="nav-item">
                         <a class="nav-link active" aria-current="page" href="/dashboard">Home</a>
@@ -77,6 +81,7 @@
                         <a class="nav-link disabled">Extra</a>
                     </li> -->
                 </ul>
+                @endguest
             </div>
         </div>
     </nav>
